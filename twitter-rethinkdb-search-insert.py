@@ -3,7 +3,7 @@ import rethinkdb as r
 r.connect('localhost', 28015).repl()
 
 twittertweets = r.db('tweets').table('twittertweets')
-counter = 2139 #Start of counter, better to save / load from file
+counter = 0 #Start of counter, better to save / load from file
 #Acknowledgments: Most of code from: https://pypi.python.org/pypi/TwitterSearch/ (Twitter Search Example)
 #Modified python script by Tsubasa Kato (@stingraze) 
 
