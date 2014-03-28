@@ -26,7 +26,7 @@ try:
     for tweet in ts.searchTweetsIterable(tso): # this is where the fun actually starts :)
 	counter = counter + 1
         print( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] ) )
-	twittertweets.insert({"id": counter, "user": tweet['user'], "tweet": tweet['text']}).run() #Inserts tweets to RethinkDB
+	twittertweets.insert({"id": counter, "user": tweet['user']['screen_name'], "tweet": tweet['text']}).run() #Inserts tweets to RethinkDB
 
 
 except TwitterSearchException as e: # take care of all those ugly errors if there are some
